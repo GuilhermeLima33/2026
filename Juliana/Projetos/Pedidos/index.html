@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+h1{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255, 4, 4);
+    border: 2px;
+}
+.botoes{
+    display: flex;
+    justify-content: space-evenly;
+    
+
+}
+
+button{
+    height: 50px;
+    width: 250px ;
+    background-color: black;
+    color: rgb(248, 248, 248);
+    border-radius: 20px;
+}
+
+.botaoS{
+    margin-right: 100px;
+}
+
+body{
+    background-image: url('Gemini_Generated_Image_sq1a7jsq1a7jsq1a.png');
+    
+}
+
+</style>
+<body>
+    <h1>O LIMA SANGUINARIO PRIME67 ESTÁ TE DESAFIANDO PARA UMA LUTA! </h1>
+    <div class="botoes">
+    <div class="botaoS">
+     <button onclick="sim()">SIM, ACEITO O DESAFIO😡</button>   
+    </div> 
+    <div class="botaoN">
+        <button onclick="desvia()" id="botao" onmouseover="desvia()">NÃO, ESTOU COM MEDO😭</button>
+    </div>   
+    </div>
+    <script>
+    function sim(){
+        location.href = "https://www.youtube.com/shorts/avt-H1OtuVk "
+    }
+    function desvia(){
+        let botao = document.getElementById("botao")
+        botao.style.position = "Absolute"
+        botao.style.bottom = gerarPosicao (10, 80)
+        botao.style.left = gerarPosicao (10, 80)
+
+
+    }
+
+    function gerarPosicao(min, max){
+    return (Math.random()*(max-min)+min)+ "%"
+
+    }
+    </script>
+</body>
+</html>

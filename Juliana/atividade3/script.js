@@ -1,0 +1,75 @@
+console.log("01 - Pode Dirigir")
+let idade = Number(prompt("Qual sua idade?"))
+let cnh = prompt("Você tem cnh?")
+console.log(idade >= 18 && cnh == "sim")
+
+console.log("02 - Aprovação Escolar")
+let nota = Number(prompt("Qual sua nota?"))
+let falta = Number(prompt("Qual seu número de faltas?"))
+console.log(nota>= 6 && falta <= 10)
+
+console.log("03 - Acesso ao Evento")
+let idadee = Number(prompt("Qual sua idade?"))
+let convite = prompt("Você tem o convite?")
+console.log(idadee >= 18 && convite == "sim")
+
+console.log("04 - Empréstimo Bancário")
+let salario = Number(prompt("Qual seu saláro?"))
+let sujolimpo = prompt("Seu nome está limpo?")
+console.log(salario>=2500 && sujolimpo == "sim")
+
+console.log("05 - Entrada ")
+let convitee = prompt("Você tem o convite?")
+let lista = prompt("Seus nome está na lista?")
+console.log(convitee == "sim" || lista == "sim")
+
+console.log("06 - Desconto na Barbearia")
+let compra = Number(prompt("Qual o valor da compra?"))
+let vip = prompt("Você é cliente vip?")
+console.log(compra > 80 || vip == "sim")
+
+console.log("07 - Recuperação Escolar")
+let n1 = Number(prompt("Qual sua nota?"))
+let n2 = prompt("Faz trabalho extra?")
+console.log(n1>5 && n2 == "sim")
+
+console.log("08 - Liberação de Sistema")
+let senha = prompt("Qual sua senha?")
+let digital = prompt("A digital foi reconhecida?")
+console.log(senha == "1234" && digital == true)
+
+console.log("09 - Conta Bloqueada")
+let bloqueado = prompt("Bloqueado: ")
+console.log(bloqueado)
+
+console.log("10 - Cadastro Incompleto")
+let cadastro = prompt("Tem cadastro: ")
+console.log(cadastro)
+
+console.log("11 - Acesso Completo")
+let loguin = prompt("Loguin:")
+let senhalog = prompt("Senha:")
+console.log(loguin == "ADMIN" && senhalog == "senai2026")
+
+console.log("12 - Compra Parcelada")
+let compraa = Number(prompt("Qual o valor da compra?"))
+let card = prompt("Cartao da loja:")
+let nomelimpo = prompt("Seu nome está limpo?")
+console.log(compraa > 300 && card == "sim" && nomelimpo == "sim")
+
+console.log("13 - Matrícula")
+let idaden1 = Number(prompt("Qual sua idade?"))
+let doc = prompt("Entregou os doc?")
+let pagmatri = prompt ("Pagou a matricula?")
+console.log(idaden1 >= 17 && doc == "sim" && pagmatri == "sim")
+
+console.log("14 - Entrada no Clube")
+let idadenat = Number(prompt("Qual sua idade?"))
+let sociedade = prompt("Qual sua classificação?")
+console.log(idadenat >= 15 && (sociedade == "sócio" || sociedade == "convidado"))
+
+
+
+
+
+

@@ -1,0 +1,106 @@
+let num1 = Number(prompt("Informe o número: "))
+let dobro = (num1) => {
+return num1 * 2
+}
+console.log(dobro(num1))
+
+console.log("---------------------------------")
+
+let num2 = Number(prompt("Informe o número: "))
+let num3 = Number(prompt("Informe outro: "))
+let soma = (num2, num3) => {
+return num2 + num3
+}
+console.log(soma(num2, num3))
+
+console.log("---------------------------------")
+
+let num4 = Number(prompt("Informe o número: "))
+let quadrado = (num4) => {
+return num4 * 4
+}
+console.log(quadrado(num4))
+
+console.log("---------------------------------")
+
+let num5 = Number(prompt("Informe o número: "))
+let sucessor = (num5) => {
+return num5 + 1
+}
+console.log(sucessor(num5))
+
+console.log("---------------------------------")
+
+let num6 = Number(prompt("Informe o primeiro número: "))
+let num7 = Number(prompt("Informe o segundo número: "))
+let maiorNumero = (num6, num7) => {
+if (num6 > num7){
+    return "Primeiro Número maior"
+}else if(num7 > num6 ){
+    return "Número 2 maior"
+}else{
+return "Números iguais"
+}
+}
+console.log(maiorNumero(num6, num7))
+
+console.log("---------------------------------")
+
+let num8 = Number(prompt("Informe um número: "))
+let parOuImpar = (num8) => {
+let conta = num8 % 2
+if(conta == 0){
+    return "Número par"
+}else{
+    return "Número impar"
+}
+}
+console.log(parOuImpar(num8))
+
+console.log("---------------------------------")
+
+let num9 = Number(prompt("Informe um número: "))
+let verificarNumero = (num9) =>{
+if(num9 > 0){
+    return "Número positivo"
+}else if (num9 < 0){
+    return "Número negativo"
+}else{
+    return "Zero"
+}
+}
+console.log(verificarNumero(num9))
+
+console.log("---------------------------------")
+
+let num10 = Number(prompt("Informe um número: "))
+let num11 = Number(prompt("Informe outro número: "))
+let num12 = Number(prompt("Informe mais um número: "))
+let media = (num10,num11, num12) => {
+return (num10+num11+num12) /3
+}
+console.log(media(num10,num11,num12))
+
+console.log("---------------------------------")
+
+let num13 = Number(prompt("Informe o preço do produto: "))
+let calculardesconto = (num13) =>{
+return num13 - (num13 * 0.20)
+}
+console.log(calculardesconto(num13))
+
+console.log("---------------------------------")
+
+let num14 = Number(prompt("Informe a nota:"))
+let num15 = Number(prompt("Informe outra nota:"))
+let varificarNota = (num14,num15) => {
+let conta = (num14 + num15) /2
+if(conta >= 7){
+    return "Aprovado"
+}else if (conta >= 5){
+    return "Recuperação"
+}else{
+    return "Reprovado"
+}
+}
+console.log(varificarNota(num14,num15))

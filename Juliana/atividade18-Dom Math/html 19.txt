@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>1-Arredondar número</h1>
+    <input type="text" id="texto">
+    <button onclick="arredondar()">Arredondar</button>
+    <p id="resultado"></p>
+    
+
+    <h1>2-Arredondamento para baixo</h1>
+    <input type="number" id="inputbaixo">
+    <button onclick="arredondarbaixo()">arredondar</button>
+    <p id="result"></p>
+    
+
+    <h1>3-Arredondar para cima</h1>
+    <input type="number" id="icima">
+    <button onclick="arredondarcima()">arredondar</button>
+    <p id="resultadocima"></p>
+   
+
+    <h1>4-Raiz quadrada</h1>
+    <input type="number" id="iquadrada">
+    <button onclick="raizquadrada()">calcular</button>
+    <p id="resultadoquadrada"></p>
+
+    <h1>5-Potencia de número</h1>
+    <input type="number" id="ipotencia">
+    <input type="number" id="ipotenciadois">
+    <button onclick="potencia()">calcular</button>
+    <p id="resultpotencia"></p>
+
+    <h1>6-Maior número</h1>
+    <input type="number" id="imaiorum">
+    <input type="number" id="imaiordois">
+    <input type="number" id="imaiortres">
+    <button onclick="maiornumero()">comparar</button>
+    <p id="resultmaior"></p>
+
+    <h1>7-Menor Número</h1>
+    <input type="number" id="imenorum">
+    <input type="number" id="imenordois">
+    <input type="number" id="imenortres">
+    <button onclick="menornumero()">comparar</button>
+    <p id="resultmenor"></p>
+
+    <h1>8- Sortear Número</h1>
+    <button onclick="sortearnumero()">Sortear</button>
+    <p id="res"></p>
+
+    <h1>9- Simular Dado</h1>
+    <button onclick="simulardado()">Jogar</button>
+    <p id="resp"></p>
+
+
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
