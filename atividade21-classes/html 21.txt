@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="corpo">
+    <p id="pum">guilherme</p>
+    <button id="adicionar">adicionar</button>
+    <button id="remover">Remover</button>
+    <button id="ad">Add/Remove</button>
+    <hr>
+
+    <p id="pdois">Silva</p>
+    <button id="add2">Adicionar</button>
+    <button id="remove2">Remover</button>
+    <hr>
+
+    <p id="ptres">Lima</p>
+    <button id="add3">Mudar</button>
+    <hr>
+
+    <p id="pquatro">LimaGuilherme</p>
+    <button id="add4">Mudar</button>
+    <hr>
+
+    <p id="pcinco">GuilhermeDaSilvalima</p>
+    <hr>
+
+    <button id="aparencia">Mudar</button>
+    <hr>
+    <div id="dv1">
+    <p>Gui</p>
+    </div>
+    <div id="dv2">
+    <p>Guilherme Lima</p>
+    </div>
+    <div id="dv3">
+      <p>Guilherme Silva</p>  
+    </div>
+    <hr>
+
+    <h2 id="h2">GuilhermeDaSilvalima</h2>
+    <button id="modoescuro">Mudar</button>
+    <hr>
+
+    <div id="dvescondido" class="mostrar">
+    <p>Item 1</p>
+    <p>Item 2</p>
+    <p>Item 3</p>
+    <p>Item 4</p>
+    </div>
+    <button id="menu">menu</button>
+
+    <hr>
+<div id="caixaInterativa">
+    Interaja comigo!
+</div>
+
+<hr>
+
+<button id="btnVermelho">Vermelho</button>
+<button id="btnAzul">Azul</button>
+<button id="btnVerde">Verde</button>
+
+<div id="caixaCores">
+    <p id="core"></p>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

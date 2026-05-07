@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="fundo">
+
+<h1>1:</h1>
+<button id="bt1">Alterar</button>
+<p id="mud">Mud1</p>
+
+<hr>
+<h1>2:</h1>
+<button id="bt2">Mudar</button>
+
+<hr>
+<h1>3:</h1>
+<p id="contador">0</p>
+<button id="bt3">Clique aqui</button>
+
+<hr>
+<h1>4:</h1>
+<p id="fantasma">Sumir</p>
+<button id="bt4">Clique aqui</button>
+
+<hr>
+<h1>5:</h1>
+<input type="text" id="campo5" placeholder="Espelho de texto">
+<p id="espelho">Aguardando digitação...</p>
+
+<hr>
+<h1>6:</h1>
+<input type="text" id="campo6" placeholder="Texto em maiúsculo">
+<p id="maiusculo">TEXTO AQUI</p>
+
+<hr>
+<h1>7:</h1>
+<input type="text" id="campo7" placeholder="Contador de caracteres">
+<p id="contagem">Você digitou 0 caracteres</p>
+
+<hr>
+<h1>8:</h1>
+<input type="text" id="campo8" placeholder="Validação">
+<p id="validacao">Texto muito curto</p>
+
+<hr>
+<h1>9:</h1>
+<div id="caixa" style="width: 100px; height: 100px; background-color: blue;"></div>
+
+<hr>
+<h1>10:</h1>
+<button id="bt10">Passe o mouse</button>
+<p id="msg10" style="display: none;">Mensagem Revelada!</p>
+
+<hr>
+<h1>11:</h1>
+<p id="frase11">Frase original</p>
+
+<hr>
+<h1>12:</h1>
+<input type="text" id="campo12" placeholder="Desafio completo">
+<p id="texto12">O texto aparece aqui</p>
+<button id="btLimpar">Limpar Campo</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

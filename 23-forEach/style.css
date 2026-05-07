@@ -1,0 +1,17 @@
+.mudar {
+    color: green;
+    background-color: aqua;
+    font-size: 30px;
+}
+
+.item{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 15px;
+}
+
+.troca{
+    background-color: yellow;
+    color: blue;
+}
