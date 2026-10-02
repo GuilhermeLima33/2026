@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Old Guard | Performance System</title>
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- ÍCONES -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- CHART.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ============================================= -->
+    <!-- LOGIN / CADASTRO -->
+    <!-- ============================================= -->
+
+    <section id="authScreen" class="auth-screen">
+
+        <div class="auth-container">
+
+            <div class="auth-left">
+
+                <div class="logo-big">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <p class="eyebrow">
+                    TREINO • NUTRIÇÃO • PERFORMANCE
+                </p>
+
+                <h1>
+                    OLD <span>GUARD</span>
+                </h1>
+
+                <p class="auth-description">
+                    Controle sua evolução, treinos, alimentação,
+                    hidratação e desempenho em um único sistema.
+                </p>
+
+                <div class="auth-benefits">
+
+                    <p>
+                        <i class="fa-solid fa-chart-line"></i>
+                        Acompanhe sua evolução
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-dumbbell"></i>
+                        Registre seus treinos
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-utensils"></i>
+                        Controle sua alimentação
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-users"></i>
+                        Participe de desafios
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="auth-right">
+
+                <p class="eyebrow" id="authEyebrow">
+                    ACESSO
+                </p>
+
+                <h2 id="authTitle">
+                    Entre na sua conta
+                </h2>
+
+                <p class="text-muted" id="authSubtitle">
+                    Acesse o Old Guard para continuar.
+                </p>
+
+
+                <form id="authForm">
+
+                    <div id="registerFields" class="hidden">
+
+                        <div class="input-group">
+
+                            <label for="authName">
+                                Nome
+                            </label>
+
+                            <input
+                                id="authName"
+                                type="text"
+                                placeholder="Seu nome"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="authEmail">
+                            E-mail
+                        </label>
+
+                        <input
+                            id="authEmail"
+                            type="email"
+                            placeholder="voce@email.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="authPassword">
+                            Senha
+                        </label>
+
+                        <input
+                            id="authPassword"
+                            type="password"
+                            placeholder="Mínimo 6 caracteres"
+                            minlength="6"
+                            required
+                        >
+
+                    </div>
+
+
+                    <p
+                        id="authMessage"
+                        class="message"
+                    ></p>
+
+
+                    <button
+                        class="btn primary full"
+                        id="authSubmit"
+                        type="submit"
+                    >
+                        Entrar
+                    </button>
+
+                </form>
+
+
+                <p class="auth-switch">
+
+                    <span id="authSwitchText">
+                        Ainda não possui conta?
+                    </span>
+
+                    <button
+                        id="authSwitch"
+                        type="button"
+                    >
+                        Criar conta
+                    </button>
+
+                </p>
+
+
+                <button
+                    class="btn outline full"
+                    id="demoLogin"
+                    type="button"
+                >
+                    <i class="fa-solid fa-flask"></i>
+                    Entrar no modo demonstração
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ============================================= -->
+    <!-- SISTEMA -->
+    <!-- ============================================= -->
+
+    <div id="app" class="hidden">
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+                    <strong>
+                        OLD <span>GUARD</span>
+                    </strong>
+
+                    <small>
+                        Performance System
+                    </small>
+                </div>
+
+            </div>
+
+
+            <nav class="nav">
+
+                <button
+                    class="nav-btn active"
+                    data-page="dashboard"
+                >
+                    Painel
+                </button>
+
+                <button
+                    class="nav-btn"
+                    data-page="workouts"
+                >
+                    Treinos
+                </button>
+
+                <button
+                    class="nav-btn"
+                    data-page="diet"
+                >
+                    Dieta
+                </button>
+
+                <button
+                    class="nav-btn"
+                    data-page="hydration"
+                >
+                    Hidratação
+                </button>
+
+                <button
+                    class="nav-btn"
+                    data-page="biotypes"
+                >
+                    Biotipos
+                </button>
+
+                <button
+                    class="nav-btn"
+                    data-page="social"
+                >
+                    Social
+                </button>
+
+                <button
+                    class="nav-btn"
+                    data-page="profile"
+                >
+                    Perfil
+                </button>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <span id="headerUser">
+                    Usuário
+                </span>
+
+                <button
+                    id="logoutButton"
+                    class="icon-button"
+                    title="Sair"
+                >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <main class="container">
+
+
+            <!-- ============================================= -->
+            <!-- DASHBOARD -->
+            <!-- ============================================= -->
+
+            <section
+                id="dashboard"
+                class="page active-page"
+            >
+
+                <div class="hero">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            OLD GUARD • INTEL & PERFORMANCE
+                        </p>
+
+                        <h1>
+                            PERCURSO REAL.
+                            <br>
+
+                            <span>
+                                RESULTADOS SUSTENTÁVEIS.
+                            </span>
+                        </h1>
+
+                        <p>
+                            Monitore seu treino, alimentação,
+                            hidratação e evolução corporal.
+                        </p>
+
+                        <button
+                            class="btn primary"
+                            data-go="workouts"
+                        >
+                            COMEÇAR TREINO
+                        </button>
+
+                    </div>
+
+                    <i class="fa-solid fa-shield-halved hero-icon"></i>
+
+                </div>
+
+
+                <div class="section-title">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            VISÃO GERAL
+                        </p>
+
+                        <h2>
+                            Painel de inteligência
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="metrics">
+
+                    <div class="metric-card">
+
+                        <span>
+                            CALORIAS HOJE
+                        </span>
+
+                        <strong id="dashboardCalories">
+                            0 kcal
+                        </strong>
+
+                        <p id="dashboardCaloriesGoal">
+                            Meta: 2200 kcal
+                        </p>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            PESO ATUAL
+                        </span>
+
+                        <strong id="dashboardWeight">
+                            75 kg
+                        </strong>
+
+                        <p id="dashboardWeightGoal">
+                            Meta: 70 kg
+                        </p>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            GORDURA CORPORAL
+                        </span>
+
+                        <strong id="dashboardBodyFat">
+                            --%
+                        </strong>
+
+                        <p>
+                            Estimativa US Navy
+                        </p>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            TREINOS
+                        </span>
+
+                        <strong id="dashboardWorkouts">
+                            0
+                        </strong>
+
+                        <p>
+                            Sessões registradas
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid-2">
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <p class="eyebrow">
+                                    NUTRIÇÃO
+                                </p>
+
+                                <h3>
+                                    Consumo calórico
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="calorie-display">
+
+                            <strong id="caloriePercentage">
+                                0%
+                            </strong>
+
+                            <span>
+                                da meta diária
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                id="calorieProgress"
+                                class="progress-fill"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="macro-grid">
+
+                            <div>
+                                <span>Proteína</span>
+                                <strong id="macroProtein">0g</strong>
+                            </div>
+
+                            <div>
+                                <span>Carboidrato</span>
+                                <strong id="macroCarbs">0g</strong>
+                            </div>
+
+                            <div>
+                                <span>Gordura</span>
+                                <strong id="macroFat">0g</strong>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <p class="eyebrow">
+                                    ANÁLISE
+                                </p>
+
+                                <h3>
+                                    Diagnóstico do dia
+                                </h3>
+
+                            </div>
+
+                            <i class="fa-solid fa-brain purple-icon"></i>
+
+                        </div>
+
+
+                        <div
+                            id="dashboardInsights"
+                            class="insights"
+                        ></div>
+
+                    </article>
+
+                </div>
+
+
+                <div class="grid-2">
+
+                    <article class="panel">
+
+                        <h3>
+                            Evolução do peso
+                        </h3>
+
+                        <div class="chart-box">
+
+                            <canvas id="weightChart"></canvas>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="panel">
+
+                        <h3>
+                            Volume de treino
+                        </h3>
+
+                        <div class="chart-box">
+
+                            <canvas id="workoutChart"></canvas>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ============================================= -->
+            <!-- TREINOS -->
+            <!-- ============================================= -->
+
+            <section
+                id="workouts"
+                class="page hidden"
+            >
+
+                <div class="section-title">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            MOVIMENTO & CONSISTÊNCIA
+                        </p>
+
+                        <h2>
+                            Treinos
+                        </h2>
+
+                        <p>
+                            Gerencie seus exercícios e acompanhe suas cargas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid-2">
+
+                    <form
+                        id="exerciseForm"
+                        class="panel"
+                    >
+
+                        <h3>
+                            Novo exercício
+                        </h3>
+
+                        <div class="input-group">
+
+                            <label>
+                                Nome
+                            </label>
+
+                            <input
+                                id="exerciseName"
+                                required
+                                placeholder="Ex.: Supino reto"
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Categoria
+                            </label>
+
+                            <select id="exerciseCategory">
+
+                                <option>Peitoral</option>
+                                <option>Costas</option>
+                                <option>Pernas</option>
+                                <option>Ombros</option>
+                                <option>Bíceps</option>
+                                <option>Tríceps</option>
+                                <option>Abdômen</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button class="btn primary full">
+                            Adicionar exercício
+                        </button>
+
+                    </form>
+
+
+                    <article class="panel">
+
+                        <h3>
+                            Biblioteca
+                        </h3>
+
+                        <div
+                            id="exerciseList"
+                            class="list"
+                        ></div>
+
+                    </article>
+
+                </div>
+
+
+                <div class="grid-2">
+
+                    <form
+                        id="workoutForm"
+                        class="panel"
+                    >
+
+                        <p class="eyebrow">
+                            REGISTRAR TREINO
+                        </p>
+
+                        <h3>
+                            Execução
+                        </h3>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Exercício
+                            </label>
+
+                            <select id="workoutExercise"></select>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="input-group">
+
+                                <label>
+                                    Carga
+                                </label>
+
+                                <input
+                                    id="workoutWeight"
+                                    type="number"
+                                    value="20"
+                                    min="0"
+                                    step="0.5"
+                                >
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Séries
+                                </label>
+
+                                <input
+                                    id="workoutSets"
+                                    type="number"
+                                    value="4"
+                                    min="1"
+                                >
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Repetições
+                                </label>
+
+                                <input
+                                    id="workoutReps"
+                                    type="number"
+                                    value="10"
+                                    min="1"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timer-box">
+
+                            <span id="timer">
+                                00:00
+                            </span>
+
+                            <button
+                                id="timerButton"
+                                class="btn outline"
+                                type="button"
+                            >
+                                Iniciar cronômetro
+                            </button>
+
+                        </div>
+
+
+                        <button class="btn primary full">
+                            Finalizar treino
+                        </button>
+
+                    </form>
+
+
+                    <article class="panel">
+
+                        <h3>
+                            Histórico
+                        </h3>
+
+                        <div
+                            id="workoutHistory"
+                            class="list"
+                        ></div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ============================================= -->
+            <!-- DIETA -->
+            <!-- ============================================= -->
+
+            <section
+                id="diet"
+                class="page hidden"
+            >
+
+                <div class="section-title">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            NUTRIÇÃO
+                        </p>
+
+                        <h2>
+                            Dieta
+                        </h2>
+
+                        <p>
+                            Registre seus alimentos e acompanhe seus macros.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="metrics">
+
+                    <div class="metric-card">
+
+                        <span>
+                            CALORIAS
+                        </span>
+
+                        <strong id="dietCalories">
+                            0
+                        </strong>
+
+                        <p>
+                            kcal
+                        </p>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            PROTEÍNA
+                        </span>
+
+                        <strong id="dietProtein">
+                            0g
+                        </strong>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            CARBOIDRATO
+                        </span>
+
+                        <strong id="dietCarbs">
+                            0g
+                        </strong>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <span>
+                            GORDURA
+                        </span>
+
+                        <strong id="dietFat">
+                            0g
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid-2">
+
+                    <form
+                        id="mealForm"
+                        class="panel"
+                    >
+
+                        <h3>
+                            Adicionar refeição
+                        </h3>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Refeição
+                            </label>
+
+                            <select id="mealType">
+
+                                <option>Café da manhã</option>
+                                <option>Almoço</option>
+                                <option>Lanche</option>
+                                <option>Jantar</option>
+                                <option>Ceia</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Alimento
+                            </label>
+
+                            <select id="mealFood"></select>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Quantidade (g)
+                            </label>
+
+                            <input
+                                id="mealAmount"
+                                type="number"
+                                value="100"
+                                min="1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <button class="btn primary full">
+                            Adicionar
+                        </button>
+
+                    </form>
+
+
+                    <article class="panel">
+
+                        <h3>
+                            Refeições de hoje
+                        </h3>
+
+                        <div
+                            id="mealList"
+                            class="list"
+                        ></div>
+
+                    </article>
+
+                </div>
+
+
+                <article class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <p class="eyebrow">
+                                BIBLIOTECA
+                            </p>
+
+                            <h3>
+                                Alimentos cadastrados
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="foodForm"
+                        class="food-form"
+                    >
+
+                        <input
+                            id="foodName"
+                            placeholder="Alimento"
+                            required
+                        >
+
+                        <input
+                            id="foodCalories"
+                            type="number"
+                            placeholder="kcal/100g"
+                            required
+                        >
+
+                        <input
+                            id="foodProtein"
+                            type="number"
+                            step="0.1"
+                            placeholder="Proteína"
+                            required
+                        >
+
+                        <input
+                            id="foodCarbs"
+                            type="number"
+                            step="0.1"
+                            placeholder="Carboidrato"
+                            required
+                        >
+
+                        <input
+                            id="foodFat"
+                            type="number"
+                            step="0.1"
+                            placeholder="Gordura"
+                            required
+                        >
+
+                        <button class="btn primary">
+                            Adicionar
+                        </button>
+
+                    </form>
+
+
+                    <div
+                        id="foodList"
+                        class="list"
+                    ></div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- ============================================= -->
+            <!-- HIDRATAÇÃO -->
+            <!-- ============================================= -->
+
+            <section
+                id="hydration"
+                class="page hidden"
+            >
+
+                <div class="section-title">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            RECUPERAÇÃO
+                        </p>
+
+                        <h2>
+                            Hidratação
+                        </h2>
+
+                        <p>
+                            Controle o consumo diário de água.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid-2">
+
+                    <article class="panel water-panel">
+
+                        <div class="water-circle">
+
+                            <i class="fa-solid fa-droplet"></i>
+
+                            <strong id="waterConsumed">
+                                0 ml
+                            </strong>
+
+                            <span id="waterGoal">
+                                Meta: 2800 ml
+                            </span>
+
+                        </div>
+
+
+                        <div class="water-buttons">
+
+                            <button
+                                class="btn outline water-add"
+                                data-water="250"
+                            >
+                                +250 ml
+                            </button>
+
+                            <button
+                                class="btn outline water-add"
+                                data-water="500"
+                            >
+                                +500 ml
+                            </button>
+
+                            <button
+                                class="btn outline water-add"
+                                data-water="750"
+                            >
+                                +750 ml
+                            </button>
+
+                            <button
+                                id="resetWater"
+                                class="btn danger"
+                            >
+                                Zerar
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="panel">
+
+                        <h3>
+                            Configuração
+                        </h3>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Quantidade por kg
+                            </label>
+
+                            <input
+                                id="waterPerKg"
+                                type="number"
+                                value="37.5"
+                                step="0.5"
+                            >
+
+                        </div>
+
+
+                        <label class="checkbox">
+
+                            <input
+                                id="intenseWorkout"
+                                type="checkbox"
+                            >
+
+                            Treino intenso hoje
+
+                        </label>
+
+
+                        <label class="checkbox">
+
+                            <input
+                                id="useCreatine"
+                                type="checkbox"
+                            >
+
+                            Uso de creatina
+
+                        </label>
+
+
+                        <div
+                            id="hydrationAdvice"
+                            class="info-box"
+                        ></div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ============================================= -->
+            <!-- BIOTIPOS -->
+            <!-- ============================================= -->
+
+            <section
+                id="biotypes"
+                class="page hidden"
+            >
+
+                <div class="section-title">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            PERFIL CORPORAL
+                        </p>
+
+                        <h2>
+                            Biotipos
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="biotype-grid">
+
+                    <button
+                        class="biotype-card"
+                        data-biotype="Ectomorfo"
+                    >
+
+                        <i class="fa-solid fa-person"></i>
+
+                        <strong>
+                            Ectomorfo
+                        </strong>
+
+                        <p>
+                            Estrutura corporal geralmente mais leve.
+                        </p>
+
+                    </button>
+
+
+                    <button
+                        class="biotype-card"
+                        data-biotype="Mesomorfo"
+                    >
+
+                        <i class="fa-solid fa-person-running"></i>
+
+                        <strong>
+                            Mesomorfo
+                        </strong>
+
+                        <p>
+                            Boa resposta a exercícios de força.
+                        </p>
+
+                    </button>
+
+
+                    <button
+                        class="biotype-card"
+                        data-biotype="Endomorfo"
+                    >
+
+                        <i class="fa-solid fa-person-rays"></i>
+
+                        <strong>
+                            Endomorfo
+                        </strong>
+
+                        <p>
+                            Maior facilidade para ganho de massa.
+                        </p>
+
+                    </button>
+
+                </div>
+
+
+                <article class="panel">
+
+                    <p class="eyebrow">
+                        BIOTIPO SELECIONADO
+                    </p>
+
+                    <h3 id="biotypeTitle">
+                        Nenhum selecionado
+                    </h3>
+
+                    <p
+                        id="biotypeDescription"
+                        class="text-muted"
+                    >
+                        Escolha um dos biotipos acima.
+                    </p>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- ============================================= -->
+            <!-- SOCIAL -->
+            <!-- ============================================= -->
+
+            <section
+                id="social"
+                class="page hidden"
+            >
+
+                <div class="section-title">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            COMUNIDADE
+                        </p>
+
+                        <h2>
+                            Desafios sociais
+                        </h2>
+
+                        <p>
+                            Registre atividades e acompanhe sua pontuação.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid-2">
+
+                    <form
+                        id="socialForm"
+                        class="panel"
+                    >
+
+                        <h3>
+                            Novo check-in
+                        </h3>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Atividade
+                            </label>
+
+                            <select id="socialActivity">
+
+                                <option>Musculação</option>
+                                <option>Corrida</option>
+                                <option>Caminhada</option>
+                                <option>Ciclismo</option>
+                                <option>Natação</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Pontos
+                            </label>
+
+                            <input
+                                id="socialPoints"
+                                type="number"
+                                value="10"
+                                min="1"
+                            >
+
+                        </div>
+
+
+                        <button class="btn primary full">
+                            Publicar
+                        </button>
+
+                    </form>
+
+
+                    <article class="panel">
+
+                        <p class="eyebrow">
+                            SEUS PONTOS
+                        </p>
+
+                        <div class="ranking-score">
+
+                            <i class="fa-solid fa-trophy"></i>
+
+                            <strong id="totalPoints">
+                                0
+                            </strong>
+
+                            <span>
+                                pontos
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <article class="panel">
+
+                    <h3>
+                        Atividades recentes
+                    </h3>
+
+                    <div
+                        id="socialList"
+                        class="list"
+                    ></div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- ============================================= -->
+            <!-- PERFIL -->
+            <!-- ============================================= -->
+
+            <section
+                id="profile"
+                class="page hidden"
+            >
+
+                <div class="section-title">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            PERFIL
+                        </p>
+
+                        <h2>
+                            Dados e composição corporal
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid-2">
+
+                    <form
+                        id="profileForm"
+                        class="panel"
+                    >
+
+                        <h3>
+                            Informações
+                        </h3>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Nome
+                            </label>
+
+                            <input id="profileName">
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="input-group">
+
+                                <label>
+                                    Idade
+                                </label>
+
+                                <input
+                                    id="profileAge"
+                                    type="number"
+                                >
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Sexo
+                                </label>
+
+                                <select id="profileGender">
+
+                                    <option value="male">
+                                        Masculino
+                                    </option>
+
+                                    <option value="female">
+                                        Feminino
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Altura (cm)
+                                </label>
+
+                                <input
+                                    id="profileHeight"
+                                    type="number"
+                                >
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Peso (kg)
+                                </label>
+
+                                <input
+                                    id="profileWeight"
+                                    type="number"
+                                    step="0.1"
+                                >
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Meta de peso
+                                </label>
+
+                                <input
+                                    id="profileTargetWeight"
+                                    type="number"
+                                    step="0.1"
+                                >
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Meta calorias
+                                </label>
+
+                                <input
+                                    id="profileCalories"
+                                    type="number"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <h4>
+                            Medidas para % de gordura
+                        </h4>
+
+
+                        <div class="form-grid">
+
+                            <div class="input-group">
+
+                                <label>
+                                    Pescoço
+                                </label>
+
+                                <input
+                                    id="profileNeck"
+                                    type="number"
+                                    step="0.1"
+                                >
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Cintura
+                                </label>
+
+                                <input
+                                    id="profileWaist"
+                                    type="number"
+                                    step="0.1"
+                                >
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Quadril
+                                </label>
+
+                                <input
+                                    id="profileHip"
+                                    type="number"
+                                    step="0.1"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <button class="btn primary full">
+                            Salvar perfil
+                        </button>
+
+                    </form>
+
+
+                    <article class="panel body-card">
+
+                        <p class="eyebrow">
+                            COMPOSIÇÃO CORPORAL
+                        </p>
+
+                        <span>
+                            Gordura corporal estimada
+                        </span>
+
+                        <strong id="bodyFatResult">
+                            --%
+                        </strong>
+
+                        <p id="bodyFatCategory">
+                            Informe suas medidas.
+                        </p>
+
+
+                        <div class="profile-results">
+
+                            <div>
+
+                                <span>
+                                    IMC
+                                </span>
+
+                                <strong id="bmiResult">
+                                    --
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Massa magra
+                                </span>
+
+                                <strong id="leanMassResult">
+                                    -- kg
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <footer>
+
+            <strong>
+                OLD <span>GUARD</span>
+            </strong>
+
+            <p>
+                Treino • Nutrição • Performance
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- JAVASCRIPT PRINCIPAL -->
+    <script src="app.js"></script>
+
+    <!-- FIREBASE -->
+    <script
+        type="module"
+        src="firebase.js"
+    ></script>
+
+</body>
+</html>
